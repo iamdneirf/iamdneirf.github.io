@@ -4,14 +4,6 @@
   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-@font-face {
-  font-family: "Font Awesome Brands";
-  src: url("../webfonts/fa-brands-400.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
-}
-
 :root {
   color-scheme: dark;
   --background: #101212;
@@ -193,14 +185,12 @@ a:focus-visible,
 .tile--github {
   --tile-background: #19221d;
   --tile-highlight: #24392d;
-  --logo-color: #c7ead0;
   border-color: #3c5043;
 }
 
 .tile--medium {
   --tile-background: #1a1e1c;
   --tile-highlight: #2a332f;
-  --logo-color: #e1ebe5;
   border-color: #3b4540;
 }
 
@@ -240,17 +230,10 @@ a:focus-visible,
 }
 
 .brand-logo {
+  display: block;
+  width: clamp(3.25rem, 6vw, 5rem);
+  height: auto;
   flex: none;
-  color: var(--logo-color);
-  font: 400 clamp(3.5rem, 7vw, 6.125rem)/1 "Font Awesome Brands";
-}
-
-.brand-logo--github::before {
-  content: "\f09b";
-}
-
-.brand-logo--medium::before {
-  content: "\f3c7";
 }
 
 .tile--pending {
@@ -311,13 +294,13 @@ a:focus-visible,
   height: 2.5rem;
   flex: none;
   place-items: center;
-  border-radius: 50%;
-  background: #24392d;
-  color: var(--accent);
 }
 
 .contact-icon--email {
   position: relative;
+  border-radius: 50%;
+  background: #24392d;
+  color: var(--accent);
 }
 
 .contact-icon--email::before {
@@ -339,9 +322,10 @@ a:focus-visible,
   content: "";
 }
 
-.contact-icon--linkedin::before {
-  font: 400 1.125rem/1 "Font Awesome Brands";
-  content: "\f0e1";
+.contact-logo {
+  display: block;
+  width: 1.75rem;
+  height: auto;
 }
 
 .contact-details {
