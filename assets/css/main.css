@@ -1,0 +1,441 @@
+/*
+  Adapted from Forty by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+@font-face {
+  font-family: "Font Awesome Brands";
+  src: url("../webfonts/fa-brands-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  color-scheme: dark;
+  --background: #101212;
+  --foreground: #f1f4f0;
+  --muted: #a8b3ad;
+  --accent: #a0dfb2;
+  --divider: #303631;
+  --gutter: clamp(1rem, 5vw, 4rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font: 400 1rem/1.6 system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+#work:focus-visible,
+#contact:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.inner {
+  width: min(70rem, calc(100% - 2 * var(--gutter)));
+  margin-inline: auto;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--divider);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.25rem;
+}
+
+.header-inner nav {
+  display: flex;
+  gap: clamp(0.75rem, 3vw, 1.75rem);
+}
+
+.wordmark,
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  text-decoration: none;
+}
+
+.wordmark {
+  gap: 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+
+.wordmark::before {
+  width: 0.7rem;
+  height: 0.7rem;
+  flex: none;
+  border: 2px solid var(--accent);
+  border-radius: 2px;
+  content: "";
+}
+
+.nav-link {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.wordmark:hover,
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* Banner and alternating tile widths follow the Forty layout. */
+#banner {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(4.5rem, 9vw, 8.25rem) clamp(3.75rem, 7vw, 6rem);
+  background: radial-gradient(ellipse at 81% 16%, #19281f, transparent 56%);
+}
+
+#banner::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 22%;
+  background-image:
+    linear-gradient(to right, #a0dfb226 1px, transparent 1px),
+    linear-gradient(to bottom, #a0dfb226 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  mask-image: radial-gradient(ellipse at 74% 22%, #000, transparent 67%);
+  content: "";
+}
+
+#banner h1 {
+  font-size: clamp(1.125rem, 2.1vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+#banner h1 span {
+  display: block;
+  margin-block-start: 0.55rem;
+  color: var(--foreground);
+  font-size: clamp(2.4rem, 7.4vw, 6.5rem);
+  font-weight: 690;
+  letter-spacing: -0.065em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+#banner p {
+  margin-block-start: clamp(1.5rem, 3vw, 2rem);
+  padding-block-start: 1.3rem;
+  border-top: 1px solid #36413a;
+  background: linear-gradient(var(--accent), var(--accent)) top left / 3rem 1px no-repeat;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.1875rem);
+}
+
+.work {
+  padding-block-end: clamp(3.25rem, 6vw, 5rem);
+  scroll-margin-block-start: 1.5rem;
+}
+
+.work h2,
+.contact h2 {
+  margin-block-end: 1.1rem;
+  font-size: 1.375rem;
+  font-weight: 630;
+  letter-spacing: -0.02em;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 0.875rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tile {
+  min-width: 0;
+  border: 1px solid var(--divider);
+  border-radius: 0.625rem;
+}
+
+.tile:nth-child(4n + 2),
+.tile:nth-child(4n + 3) {
+  grid-column: span 2;
+}
+
+.tile--github {
+  --tile-background: #19221d;
+  --tile-highlight: #24392d;
+  --logo-color: #c7ead0;
+  border-color: #3c5043;
+}
+
+.tile--medium {
+  --tile-background: #1a1e1c;
+  --tile-highlight: #2a332f;
+  --logo-color: #e1ebe5;
+  border-color: #3b4540;
+}
+
+.tile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 13rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border-radius: inherit;
+  background: radial-gradient(ellipse at 92% 15%, var(--tile-highlight), transparent 72%),
+    var(--tile-background);
+  text-decoration: none;
+  transition: box-shadow 160ms ease;
+}
+
+.tile-link:is(:hover, :focus-visible) {
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.tile-copy h3 {
+  margin-block-end: 0.3rem;
+  font-size: clamp(1.55rem, 3vw, 2.5rem);
+  font-weight: 680;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.tile-link:is(:hover, :focus-visible) h3 {
+  color: var(--accent);
+}
+
+.tile-copy p {
+  color: #b8c8bf;
+  font-size: 1rem;
+}
+
+.brand-logo {
+  flex: none;
+  color: var(--logo-color);
+  font: 400 clamp(3.5rem, 7vw, 6.125rem)/1 "Font Awesome Brands";
+}
+
+.brand-logo--github::before {
+  content: "\f09b";
+}
+
+.brand-logo--medium::before {
+  content: "\f3c7";
+}
+
+.tile--pending {
+  display: flex;
+  min-height: 5.25rem;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem clamp(1.25rem, 3vw, 2.5rem);
+  background: #171918;
+  color: #a4aca7;
+  font-size: 0.875rem;
+}
+
+.tile--pending::before {
+  width: 0.875rem;
+  flex: none;
+  border-top: 1px solid #68716c;
+  content: "";
+}
+
+.contact {
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--divider);
+  background: #141815;
+}
+
+#contact:focus-visible {
+  outline-offset: -4px;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.875rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-link {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem clamp(0.875rem, 2.5vw, 1.5rem);
+  border: 1px solid var(--divider);
+  border-radius: 0.625rem;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+}
+
+.contact-icon {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: none;
+  place-items: center;
+  border-radius: 50%;
+  background: #24392d;
+  color: var(--accent);
+}
+
+.contact-icon--email {
+  position: relative;
+}
+
+.contact-icon--email::before {
+  width: 1.1rem;
+  height: 0.78rem;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  content: "";
+}
+
+.contact-icon--email::after {
+  position: absolute;
+  inset-block-start: 0.73rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  content: "";
+}
+
+.contact-icon--linkedin::before {
+  font: 400 1.125rem/1 "Font Awesome Brands";
+  content: "\f0e1";
+}
+
+.contact-details {
+  min-width: 0;
+}
+
+.contact-label,
+.contact-address {
+  display: block;
+}
+
+.contact-label {
+  font-weight: 630;
+}
+
+.contact-address {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.contact-link:hover .contact-address {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.site-footer {
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--divider);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  text-align: end;
+}
+
+.site-footer a {
+  text-underline-offset: 0.2em;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 48rem) {
+  #banner h1 span {
+    text-wrap: initial;
+  }
+
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tile:nth-child(n) {
+    grid-column: span 1;
+  }
+
+  .tile-link {
+    min-height: 10rem;
+  }
+}
+
+@media (max-width: 33rem) {
+  .header-inner {
+    gap: 0.75rem;
+    min-height: 3.75rem;
+  }
+
+  .tile:nth-child(-n + 2) {
+    grid-column: span 2;
+  }
+
+  .tile-link {
+    min-height: 8.75rem;
+  }
+
+  .tile--pending {
+    min-height: 4.25rem;
+    gap: 0.375rem;
+    padding-inline: 0.6rem;
+  }
+
+  .tile--pending::before {
+    width: 0.6rem;
+  }
+
+  .contact-links {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site-footer {
+    text-align: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile-link {
+    transition: none;
+  }
+}

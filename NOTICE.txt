@@ -1,0 +1,6 @@
+This portfolio adapts Forty by HTML5 UP (@ajlkn).
+Template: https://html5up.net/forty
+Creative Commons Attribution 3.0: see LICENSE.txt or https://html5up.net/license
+
+The bundled brand font is Font Awesome Free 5.15.4 by @fontawesome.
+Font license: SIL Open Font License 1.1 (https://fontawesome.com/license/free)
